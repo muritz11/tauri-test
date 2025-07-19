@@ -12,11 +12,13 @@
   "app": {
     "windows": [
       {
-        "title": "tauri-test",
-        "width": 800,
-        "height": 600,
+        "title": "Tauri Test App",
+        "transparent": true,
+        "decorations": false,
+        "fullscreen": false,
         "resizable": true,
-        "fullscreen": false
+        "width": 1160,
+        "height": 748
       }
     ],
     "security": {
