@@ -10,6 +10,7 @@
     "beforeBuildCommand": "npm run build"
   },
   "app": {
+    "macOSPrivateApi": true,
     "windows": [
       {
         "title": "Tauri Test App",
@@ -17,6 +18,7 @@
         "decorations": false,
         "fullscreen": false,
         "resizable": true,
+        "center": true,
         "width": 1160,
         "height": 748
       }

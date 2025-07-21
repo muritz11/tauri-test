@@ -7,14 +7,20 @@
 }
 
 body {
-  /* background: rgba(0, 0, 0, 0.5); */
+  font-family: "Poppins", sans-serif;
+  /* background: transparent; */
+}
+
+.container {
+  display: flex;
+  color: #f1f1f1;
+  min-height: 100vh;
+  border-radius: 20px;
+  overflow: hidden;
   background-image: url("../images/bg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  font-family: "Poppins", sans-serif;
-  border-radius: 20px;
-  overflow: hidden;
 }
 
 .chat-input input:focus,
@@ -22,33 +28,26 @@ body {
   outline: none;
 }
 
-.container {
-  display: flex;
-  color: #f1f1f1;
-  min-height: 100vh;
-  /* border-radius: 20px;
-  overflow: hidden; */
-  box-shadow: rgba(255, 255, 255, 0.6) 0px 30px 60px -12px inset,
-    rgba(255, 255, 255, 0.7) 0px 18px 36px -18px inset;
-}
-
 /****************
 * Sidebar
 *****************/
 .sidebar {
-  background-color: rgba(0, 0, 0, 0.67);
-  backdrop-filter: blur(20px); /* frosted glass effect */
-  -webkit-backdrop-filter: blur(20px); /* Safari support */
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 20px 0 0 20px;
   width: 30%;
   padding: 40px 20px;
+  backdrop-filter: blur(20px); /* frosted glass effect */
+  -webkit-backdrop-filter: blur(20px); /* Safari support */
 }
 
 .main {
-  background-color: rgba(0, 0, 0, 0.53);
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 0 20px 20px 0;
+  width: 70%;
   backdrop-filter: blur(20px); /* frosted glass effect */
   -webkit-backdrop-filter: blur(20px); /* Safari support */
-  width: 70%;
-  /* background-color: rgba(84, 80, 79, 0.67); */
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 .side-inputs {
@@ -91,6 +90,7 @@ body {
   width: calc(100% - 30px);
   color: #f1f1f1;
   height: 100%;
+  font-size: 15px;
 }
 
 .search-input img {
@@ -154,6 +154,8 @@ body {
 
 .chat-input {
   background-color: rgba(0, 0, 0, 0.4);
+  /* backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px); */
   width: 80%;
   border-radius: 26px;
   display: flex;
@@ -188,6 +190,10 @@ body {
   cursor: pointer;
 }
 
+input {
+  font-family: 'Poppins', sans-serif;
+}
+
 .cu-left button,
 .sources-btn {
   /* background-color: rgba(84, 80, 79, 0.8); */
@@ -198,6 +204,16 @@ body {
   padding: 8px 14px;
   border: none;
   cursor: pointer;
+  transition: 0.3s ease-out;
+  font-family: 'Poppins', sans-serif;
+}
+
+.cu-left button:hover, .sources-btn:hover {
+  background-color: rgba(67, 90, 166, 0.6);
+}
+
+.cu-left button.active {
+  background-color: #2563eb99;
 }
 
 .chat-container {
@@ -253,5 +269,6 @@ body {
   border-radius: 20px;
   padding: 11px 14px;
   width: 70%;
+  font-size: 14px;
   align-self: flex-end;
 }

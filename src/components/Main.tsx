@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PlusIcon from "../assets/icons/plus.png";
 import Logo from "../assets/images/Logo.png";
 import LikeIcon from "../assets/icons/Likee.png";
@@ -17,6 +17,11 @@ const ChatHistory = [
 ];
 
 const Main = () => {
+  const [toggles, setToggles] = useState({
+    deepThinking: false,
+    searchWeb: false,
+  });
+
   return (
     <>
       {/* bottom fixed chat input */}
@@ -33,8 +38,28 @@ const Main = () => {
                 width={"47px"}
                 alt="Plus icon"
               />
-              <button>Deep Thinking</button>
-              <button>Search the web</button>
+              <button
+                className={toggles.deepThinking ? "active" : ""}
+                onClick={() => {
+                  setToggles((prevState) => ({
+                    ...prevState,
+                    deepThinking: !toggles.deepThinking,
+                  }));
+                }}
+              >
+                Deep Thinking
+              </button>
+              <button
+                className={toggles.searchWeb ? "active" : ""}
+                onClick={() => {
+                  setToggles((prevState) => ({
+                    ...prevState,
+                    searchWeb: !toggles.searchWeb,
+                  }));
+                }}
+              >
+                Search the web
+              </button>
             </div>
             <div className="cu-right">
               <img src={Logo} height={"43px"} width={"43px"} alt="Logo" />
@@ -50,20 +75,7 @@ const Main = () => {
               <div
                 className="markdown-container"
                 dangerouslySetInnerHTML={{ __html: val.response }}
-              >
-                {/* <ReactMarkdown
-                  children={val.response}
-                  remarkPlugins={[remarkGfm]}
-                  components={{
-                    ul: ({ node, ...props }) => (
-                      <ul style={{ paddingLeft: "1.5em" }} {...props} />
-                    ),
-                    ol: ({ node, ...props }) => (
-                      <ol style={{ paddingLeft: "1.5em" }} {...props} />
-                    ),
-                  }}
-                /> */}
-              </div>
+              ></div>
               <div className="actions">
                 <img
                   src={CopyIcon}
